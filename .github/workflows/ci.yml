@@ -1,0 +1,13 @@
+on:
+    push:
+        branches:
+            - main
+jobs:
+    build:
+        name: Test
+        runs-on: ubuntu-latest
+        container:
+            image: crystallang/crystal:latest
+        steps:
+            - uses: actions/checkout@v4
+            - run: crystal --version
